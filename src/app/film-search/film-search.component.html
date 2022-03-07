@@ -1,0 +1,22 @@
+
+<div class="container">
+   <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Film name</mat-label>
+      <input [(ngModel)]="name" matInput placeholder="Film name" value="">
+   </mat-form-field>
+
+   <mat-form-field appearance="fill">
+      <mat-label>Film type</mat-label>
+      <mat-select [(ngModel)]="type">
+         <mat-option *ngFor="let type of types" [value]="type.value">
+            {{type.viewValue}}
+         </mat-option>
+      </mat-select>
+   </mat-form-field>
+
+   <div>
+      <button mat-raised-button color="primary" [disabled]="!name" (click)="getFilms(1)">Get Film</button>
+   </div>
+</div>
+
+<mat-spinner *ngIf="isFilmsLoading"></mat-spinner>

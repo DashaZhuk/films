@@ -1,0 +1,27 @@
+.container{
+   width:1500px;
+   margin:0px auto;
+
+   display: flex;
+   justify-self: center;
+   align-items: center;
+
+   mat-form-field {
+      width: 100%;
+      margin: 10px 20px;
+   }
+
+   button{
+      width: 170px;
+      margin: 10px 20px;
+   }
+}
+
+.example-spacer {
+   flex: 1 1 auto;
+ }
+
+ mat-spinner{
+    margin:100px auto;
+ }
+

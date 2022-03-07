@@ -1,0 +1,24 @@
+<div class="container" *ngIf="!isLoading">
+   <div class="close-icon" mat-dialog-actions>
+      <button mat-icon-button (click)="onNoClick()" >
+         <mat-icon>close</mat-icon>
+       </button>
+   </div>
+
+   <table>
+      <tr>
+         <td><img class="poster" [src]="movie.Poster" alt=""></td>
+         <td class="details">
+            <h1>{{movie.Title}}</h1>
+            <p>{{movie.Year}}, {{movie.Country}}, {{movie.Runtime}}</p>
+            <p><b>Genre:</b>{{movie.Genre}}</p>
+            <p><b>Director:</b>{{movie.Director}}</p>
+            <p><b>Actors:</b><i>{{movie.Actors}}</i></p>
+            <p>{{movie.Plot}}</p>
+            <p *ngFor="let rating of movie.Ratings">{{rating.Source}} <b>{{rating.Value}}</b></p>
+         </td>
+      </tr>
+   </table>
+</div>
+
+<mat-spinner *ngIf="isLoading"></mat-spinner>

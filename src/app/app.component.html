@@ -1,0 +1,19 @@
+<p>
+   <mat-toolbar class="header" color="primary">
+   <span>Film Wathcer</span>
+
+   </mat-toolbar>
+</p>
+
+<app-film-search [pageIndex]="pageIndex" (onMovieSearch)="getMovies($event)"></app-film-search>
+<div *ngIf="error">{{error}}</div>
+<div *ngIf="!error" class="container">
+   <app-film-item *ngFor="let movie of movies" [film]="movie">
+   </app-film-item>
+</div>
+<div>
+   <mat-paginator  *ngIf="movies?.length && !error" [length]="length" [pageSize]="10"  [pageSizeOptions]="[10]"
+      aria-label="Select page" (page)="getEventsData($event)">
+   </mat-paginator>
+</div>
+

@@ -1,0 +1,15 @@
+<div class="container">
+   <div class="search-results">
+      <mat-card class="film-cards">
+         <img [src]="film.Poster" alt="">
+         <p>{{film?.Title}}</p>
+         <p>{{film?.Year}}</p>
+
+         <div>
+            <!-- <button mat-stroked-button color="primary">Primary</button> -->
+            <button  mat-stroked-button color="primary" (click)="getMovieById(film.imdbID)" [disabled]="isDisabled === true">Get
+               Details</button>
+         </div>
+      </mat-card>
+   </div>
+</div>
