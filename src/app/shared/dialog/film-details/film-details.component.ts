@@ -9,8 +9,6 @@ import { OmdbService } from '../../service/omdb.service';
    styleUrls: ['./film-details.component.scss']
 })
 
-
-
 export class FilmDetailsComponent implements OnInit {
    isLoading!: boolean;
    movie!: Movie;
@@ -31,7 +29,6 @@ export class FilmDetailsComponent implements OnInit {
       this.dialogRef.close();
    }
 
-
    public getMovieById(id: string): void {
       this.isLoading = true;
       this.omdbService.getMovieById(id).subscribe((movie: Movie) => {
@@ -40,6 +37,5 @@ export class FilmDetailsComponent implements OnInit {
          console.log(movie)
       })
    }
-
 
 }
